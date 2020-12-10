@@ -1,20 +1,15 @@
-const { Schema, model } = require('mongoose')
-const bcrypt = require('bcryptjs')
+const { Schema, model } = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 const userSchema = new Schema({
     nombre: String,
+    apellidos: String,
     correo: String,
-    contrasena: String,
-    provider: String,
-    provider_id: String,
-    foto: {
-        type: String,
-        default: null
-    },
-    createAt: {
-        type: Date,
-        default: Date.now()
-    }
+    tipoDeAutenticacion: String,
+    contrasena: String,    
+    facebookId: String,
+    googleId: String,
+    imagen: String
 });
 
 //METHODS
@@ -27,5 +22,4 @@ userSchema.methods.encryptPassword = (password) => {
 userSchema.methods.comparePassword = async function (contrasena) {
     return await bcrypt.compare(contrasena, this.contrasena);
 }
-
 module.exports = model('User', userSchema)

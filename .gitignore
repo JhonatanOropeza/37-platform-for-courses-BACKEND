@@ -62,4 +62,3 @@ node_modules
 .env
 
 #Facebook
-src/config/passport_FB_config.js

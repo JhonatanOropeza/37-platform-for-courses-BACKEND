@@ -9,6 +9,7 @@ inject(); // Patch express in order to use async / await syntax
 
 // Require Dependencies
 const express = require('express');
+const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -22,7 +23,6 @@ const leccionRouter = require('./resources/4_leccion/router.leccion');
 const preguntaRouter = require('./resources/4.1_pregunta/router.pregunta');
 const materialRouter = require('./resources/5_material/router.material')
 // Load .env Enviroment Variables to process.env
-
 require('mandatoryenv').load([
     'DB_URL',
     'PORT',
@@ -31,10 +31,9 @@ require('mandatoryenv').load([
 
 const { PORT } = process.env;
 
-
 // Instantiate an Express Application
 const app = express();
-
+require('./config/database');
 
 // Configure Express App Instance
 app.use(express.json( { limit: '50mb' } ));
@@ -53,8 +52,9 @@ app.use('*', (req, res, next) => {
     next();
 })
 
-// Assign Routes
+app.use(passport.initialize());
 
+// Assign Routes
 app.use('/api/alumno', alumnoRouter);
 app.use('/api/curso', cursoRouter);
 app.use('/api/nivel', nivelRouter);
