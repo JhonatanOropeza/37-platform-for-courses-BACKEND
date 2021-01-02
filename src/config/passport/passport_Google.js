@@ -1,7 +1,7 @@
 const passport = require('passport');
 const GoogleTokenStrategy = require('passport-google-token').Strategy;
 
-const User = require('../resources/1_alumno_inscrip/model.alumno');
+const User = require('../../resources/1_alumno_inscrip/model.alumno');
 
 require('mandatoryenv').load(['GOOGLE_CLIENT_ID','GOOGLE_CLIENT_SECRET']);
 const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } = process.env;

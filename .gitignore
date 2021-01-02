@@ -58,6 +58,7 @@ typings/
 .next
 
 node_modules
+/src/images
 
 .env
 

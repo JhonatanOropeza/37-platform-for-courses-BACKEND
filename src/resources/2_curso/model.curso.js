@@ -3,7 +3,11 @@ const { Schema, model } = require('mongoose');
 const cursoSchema = new Schema({
     nombre: String,
     categoria: String,
-    calificacion: 0
+    linkOfIcon: String,
+    calificacion: 0,
+    descripcion: String,
+    temario: [],
+    linkVideo: String,
 });
 
 cursoSchema.set('toObject', { virtuals: true });

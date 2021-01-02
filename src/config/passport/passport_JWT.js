@@ -5,7 +5,7 @@ const passport = require('passport');
 const JwtStategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 
-const User = require('../resources/1_alumno_inscrip/model.alumno');
+const User = require('../../resources/1_alumno_inscrip/model.alumno');
 
 passport.serializeUser(function(user, done) {
     done(null, user);

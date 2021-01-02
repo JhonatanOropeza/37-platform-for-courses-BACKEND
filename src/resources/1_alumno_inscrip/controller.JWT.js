@@ -90,14 +90,5 @@ AuthCtrl.login = async (req, res) => {
         user: userInfo
     });
 }
-// -----------------------------------------
-// 3.- Who Am I?
-// -----------------------------------------
-AuthCtrl.whoami = (req, res) => {
-    let userInfo = normalizeInfo(req.user);
-    res.json({
-        user: userInfo
-    })
-}
 
 module.exports = AuthCtrl;

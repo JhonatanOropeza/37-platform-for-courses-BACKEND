@@ -33,7 +33,7 @@ const { PORT } = process.env;
 
 // Instantiate an Express Application
 const app = express();
-require('./config/database');
+require('./config/database/database');
 
 // Configure Express App Instance
 app.use(express.json( { limit: '50mb' } ));
@@ -58,7 +58,8 @@ app.use(passport.initialize());
 app.use('/api/alumno', alumnoRouter);
 app.use('/api/curso', cursoRouter);
 app.use('/api/nivel', nivelRouter);
-app.use('/api/leccion', [leccionRouter, preguntaRouter]);
+app.use('/api/leccion', leccionRouter);
+app.use('/api/pregunta', preguntaRouter);
 app.use('/api/material', materialRouter)
 
 // Handle errors

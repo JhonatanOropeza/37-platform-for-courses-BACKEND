@@ -1,7 +1,7 @@
 const passport = require('passport');
 const FacebookTokenStrategy = require('passport-facebook-token');
 
-const User = require('../resources/1_alumno_inscrip/model.alumno');
+const User = require('../../resources/1_alumno_inscrip/model.alumno');
 
 require('mandatoryenv').load([
   'FACEBOOK_APP_ID',
@@ -22,7 +22,7 @@ const PAuthFacebook =new FacebookTokenStrategy({
     clientSecret: FACEBOOK_APP_SECRET,
     fbGraphVersion: 'v3.0'
   }, function(accessToken, refreshToken, profile, done) {
-      console.log('object', profile.photos);
+      console.log('facebook-token');
       User.findOne({facebookId: profile.id}, function (err, user) {
         //console.log('passport-facebook-token');
         if (err) {return done(err);}
