@@ -62,7 +62,7 @@ preguntaController.post_QualifyTest = async (req, res) => {
         const lessonQuestions = await Pregunta.find({ idLeccion });
         //Searching an specific question
         const studentResponses = req.body;
-        //Checking answers
+        //CCalificacando respuestas del alumno
         for (let i = 0; i < studentResponses.length; i++) {//5 elements in array
             for (let j = 0; j < lessonQuestions.length; j++) {//7 elements in array
                 if (studentResponses[i][0] === lessonQuestions[j]._id.toString()) {

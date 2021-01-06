@@ -16,5 +16,4 @@ preguntaRouter.use('/auth',
 preguntaAuth.get('/',preguntaController.preguntaPruebaAuth);
 preguntaAuth.post('/qualifyTest/:id', preguntaController.post_QualifyTest);
 
-
 module.exports = preguntaRouter;

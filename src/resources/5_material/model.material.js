@@ -14,7 +14,7 @@ materialSchema.set('toJSON', { virtuals: true });
 materialSchema.virtual('estado')
     .get(function () {
         if (this._estado == null) {
-            return 0;
+            return -2;
         }
         return this._estado;
     })

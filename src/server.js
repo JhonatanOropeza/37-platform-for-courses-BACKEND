@@ -21,7 +21,8 @@ const cursoRouter = require('./resources/2_curso/router.curso');
 const nivelRouter = require('./resources/3_nivel/router.nivel');
 const leccionRouter = require('./resources/4_leccion/router.leccion');
 const preguntaRouter = require('./resources/4.1_pregunta/router.pregunta');
-const materialRouter = require('./resources/5_material/router.material')
+const materialRouter = require('./resources/5_material/router.material');
+const ZRA_Router = require('./resources/Z_relaciones_alumno/routers/ZRelacionesAlumnos.router');
 // Load .env Enviroment Variables to process.env
 require('mandatoryenv').load([
     'DB_URL',
@@ -61,6 +62,8 @@ app.use('/api/nivel', nivelRouter);
 app.use('/api/leccion', leccionRouter);
 app.use('/api/pregunta', preguntaRouter);
 app.use('/api/material', materialRouter)
+//http://localhost:3001/api/ZRA/auth
+app.use('/api/ZRA',ZRA_Router)
 
 // Handle errors
 app.use(errorHandler());

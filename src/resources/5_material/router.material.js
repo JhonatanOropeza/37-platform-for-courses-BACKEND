@@ -5,6 +5,6 @@ const materialController = require('./controller.material');
 //http://localhost:3001/api/material
 materialRouter.get('/',materialController.materialPrueba);
 
-materialRouter.post('/crearNuevoMaterial/:id',materialController.post_Material)
+materialRouter.post('/crearNuevoMaterial/:id',materialController.post_MaterialAlumno)
 
 module.exports = materialRouter;

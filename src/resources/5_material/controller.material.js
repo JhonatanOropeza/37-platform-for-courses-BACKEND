@@ -5,7 +5,7 @@ materialController.materialPrueba = (req, res) => {
     res.status(200).send({message:'Hola desde materialPrueba'})
 }
 
-materialController.post_Material = async (req, res) => {
+materialController.post_MaterialAlumno = async (req, res) => {
     const idLeccion = req.params.id;
     const {nombre, tipo} = req.body;
     if(!nombre){
