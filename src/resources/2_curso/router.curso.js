@@ -16,7 +16,7 @@ cursoRouter.use('/auth',
     passport.authenticate(['jwt', 'facebook-token', 'google-token']),
     cursoAuth)
 cursoAuth.get('/',cursoController.cursoPruebaAuth);
-cursoAuth.get('/get_cursosDelAlumno', cursoController.get_cursosDelAlumno);//Para sección de avances
+cursoAuth.get('/get_avancesDelAlumno', cursoController.get_avancesDelAlumno);//Para sección de avances
 cursoAuth.get('/getCursoOfUser/:id', cursoController.get_CursoYesUser);//Curso con autenticación
 
 module.exports = cursoRouter;
