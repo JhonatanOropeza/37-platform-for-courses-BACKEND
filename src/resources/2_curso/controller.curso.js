@@ -15,7 +15,7 @@ cursoController.cursoPruebaAuth = (req, res) => {
 }
 
 cursoController.post_Curso = async (req, res) => {
-    const { nombre, categoria, linkOfIcon } = req.body;
+    const { nombre, categoria, linkOfIcon, descripcion, contenido, linkVideo } = req.body;
     //1.1 Validating form
     if (!nombre || !categoria || !linkOfIcon) {
         return res.status(422).send({
@@ -33,7 +33,10 @@ cursoController.post_Curso = async (req, res) => {
     const cursoToSave = new Curso({
         nombre,
         categoria,
-        linkOfIcon
+        linkOfIcon,
+        descripcion,
+        contenido,
+        linkVideo
     });
     try {
         let result = await cursoToSave.save();

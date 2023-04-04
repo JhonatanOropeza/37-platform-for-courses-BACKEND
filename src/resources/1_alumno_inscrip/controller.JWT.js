@@ -31,7 +31,7 @@ AuthCtrl.logup = async (req, res) => {
     //Validating form
     if (!nombre || !apellidos || !correo || !contrasena) {
         return res.status(422).send({
-            message: 'Complete todos los campos del formulario'
+            message: 'Complete todos los campos del formulario.'
         })
     }
     //1.2 Validating that the data isn´t repeated
@@ -57,7 +57,7 @@ AuthCtrl.logup = async (req, res) => {
         const userInfo = normalizeInfo(user);
         //I the singup was succesfully, yhe next infromation will be sent
         res.status(201).json({
-            message: `El usuario con el correo "${correo}" fue exitosamente registrado. Ahora puede inicar sesión.`,
+            message: `El usuario con el correo "${correo}" fue exitosamente registrado. Ahora puede iniciar sesión.`,
             user: userInfo
         });
     })
